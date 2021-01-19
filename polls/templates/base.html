@@ -1,0 +1,33 @@
+{% load static %}
+<html>
+    <head>
+        <!-- development version, includes helpful console warnings -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+        <script>
+            {% if vue_data %}
+            var vue_data = {{ vue_data | safe }}
+            {% else %}
+            var vue_data = {};
+            {% endif %}
+            vue_data.links = [
+                    {"name" : "Главная", "url" : "/main"},
+                    {"name" : "Документы", "url" : "/docs"},
+                    {"name" : "Объявления", "url" : "/wall"}]
+        </script>
+    </head>
+    <body>
+
+        <div id="app">
+            <ul class="top">
+                <li class="top" v-for="link in links">
+                    <a :href=link.url>[[link.name]]</a>
+                </li>
+              </ul>
+        </div>
+        <div>
+            {% block content %}{% endblock content%}
+        </div>
+        <script src="{% static 'vue.js' %}"></script>
+    </body>
+</html>
