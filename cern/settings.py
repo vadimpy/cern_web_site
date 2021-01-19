@@ -25,7 +25,7 @@ SECRET_KEY = 'rz3to(+#55tn_nd*vf7=r(0kxz!^cp@0vzd5)v)yzf903t^ii-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["vadimpy.pythonanywhere.com"]
 
 
 # Application definition
