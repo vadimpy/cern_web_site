@@ -25,7 +25,7 @@ SECRET_KEY = 'rz3to(+#55tn_nd*vf7=r(0kxz!^cp@0vzd5)v)yzf903t^ii-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["vadimpy.pythonanywhere.com"]
+ALLOWED_HOSTS = ["vadimpy.pythonanywhere.com", "localhost"]
 
 
 # Application definition
@@ -55,7 +55,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / "polls/templates"
+            str(BASE_DIR / "polls/templates")
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'cern.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': str(BASE_DIR / 'db.sqlite3'),
     }
 }
 
@@ -120,7 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = '/home/vadimpy/static/'
 STATICFILES_DIRS = [
-    '/home/vadimpy/Documents/cern/polls/templates',
+    '/home/vadimpy/cern_web_site/polls/templates',
 ]
