@@ -55,7 +55,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            str(BASE_DIR / "polls/templates")
+            str(BASE_DIR / "polls/static")
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -120,7 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/vadimpy/static/'
+STATIC_ROOT = '/home/vadimpy/Documents/cern_web_site/static/'
 STATICFILES_DIRS = [
-    '/home/vadimpy/cern_web_site/polls/templates',
+    '/home/vadimpy/Documents/cern_web_site/polls/static',
 ]

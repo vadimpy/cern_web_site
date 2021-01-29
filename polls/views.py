@@ -22,5 +22,8 @@ def docs(request):
     return render(request, "docs.html", context)
 
 def wall(request):
-    context = {"Уведомление!" : "done!"}
-    return render(request, "wall.html", pass_to_vue(context))
+    context = {"docs" : [
+        ("Устав партнёрства", "cfa.pdf"),
+        ("Внутренний регламент", "excel.xlsx"),
+    ]}
+    return render(request, "wall.html", context)
