@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
+from .models import *
 from json import dumps
 
 def pass_to_vue(context):
@@ -13,17 +14,10 @@ def main(request):
     return render(request, "main.html", pass_to_vue(context))
 
 def docs(request):
-    context = {"docs" : [
-        ("Устав партнёрства", "vue.js"),
-        ("Внутренний регламент", "vue.js"),
-        ("Протокол", "vue.js"),
-        ("Слава бюрократии", "vue.js"),
-    ]}
+    context_docs = [(o.doc_name, o.doc_file) for o in Documents.objects.all()]
+    context = {"docs" : context_docs}
     return render(request, "docs.html", context)
 
 def wall(request):
-    context = {"docs" : [
-        ("Устав партнёрства", "cfa.pdf"),
-        ("Внутренний регламент", "excel.xlsx"),
-    ]}
+    context = {"docs" : [(o.text, o.doc_name, o.doc_file) for o in Wall.objects.all()]}
     return render(request, "wall.html", context)

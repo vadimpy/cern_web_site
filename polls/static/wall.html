@@ -2,8 +2,9 @@
 {% load static %}
 {% block content %}
     <ol>
-        {% for name, path in docs %}
+        {% for text, name, path in docs %}
         <li>
+            <p>{{ text }}</p>
             <a href="{% static path %}" target="_blank">{{ name }}</a>
         </li>
         {% endfor %}

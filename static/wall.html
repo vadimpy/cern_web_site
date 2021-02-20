@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-    <p>
+    <ol>
         {% for name, path in docs %}
         <li>
             <a href="{% static path %}" target="_blank">{{ name }}</a>
         </li>
         {% endfor %}
-    </p>
+    </ol>
 {% endblock %}
