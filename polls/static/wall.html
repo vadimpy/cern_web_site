@@ -5,7 +5,7 @@
         {% for text, name, path in docs %}
         <li>
             <p>{{ text }}</p>
-            <a href="{% static path %}" target="_blank">{{ name }}</a>
+            <a href="{{ path }}" target="_blank">{{ name }}</a>
         </li>
         {% endfor %}
     </ol>

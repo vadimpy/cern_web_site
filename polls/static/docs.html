@@ -6,7 +6,7 @@
     <ol>
         {% for name, path in docs %}
         <li>
-            <a href="{% static path %}" target="_blank">{{ name }}</a>
+            <a href="{{ path }}" target="_blank">{{ name }}</a>
         </li>
         {% endfor %}
     </ol>

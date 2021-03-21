@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'cern.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'Pentagon databases',
+        'NAME': str(BASE_DIR / 'database'),
     }
 }
 
@@ -121,7 +121,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/vadimpy/Documents/cern_web_site/static/'
-STATICFILES_DIRS = [
-    '/home/vadimpy/Documents/cern_web_site/polls/static',
-]
+STATIC_ROOT = '/home/vadimpy/cern_web_site/static/'
