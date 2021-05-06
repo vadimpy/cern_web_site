@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <img class="top-pic" src="{% static 'image3.jpg' %}">
+    <ol>
+        {% for text, name, url in docs %}
+        <li>
+            <p>{{text}}</p>
+            <a href="{{url}}" target="_blank">{{ name }}</a>
+        </li>
+        {% endfor %}
+    </ol>
+{% endblock %}

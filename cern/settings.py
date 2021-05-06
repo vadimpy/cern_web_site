@@ -25,7 +25,7 @@ SECRET_KEY = 'rz3to(+#55tn_nd*vf7=r(0kxz!^cp@0vzd5)v)yzf903t^ii-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["vadimpy.pythonanywhere.com", "localhost"]
+ALLOWED_HOSTS = ["cernskoe2.ru"]
 
 
 # Application definition
@@ -56,7 +56,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            str(BASE_DIR / "polls/static")
+            str(BASE_DIR / "polls/templates")
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -121,7 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/vadimpy/Documents/cern_web_site/static/'
+STATIC_ROOT = '/root/cern_web_site/static'
 STATICFILES_DIRS = [
-    '/home/vadimpy/Documents/cern_web_site/polls/static',
+    '/root/cern_web_site/polls/static',
 ]
